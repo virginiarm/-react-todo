@@ -1,26 +1,14 @@
+import React from 'react';
+import AddTodoForm from './AddTodoForm';
+import TodoList from './TodoList';
 
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-  const todoList = [
-    { id: 1, title:"Complete assigment"},
-    { id: 2, title: "Buy coffee supplies"},
-    { id: 3, title: "Water plants"},
-  ]
+function App(){
   return (
-      <div>
-        <h1>Todo List</h1>
-        <ul>
-          {todoList.map((todo)=>(
-            <li key={todo.id}>{todo.title}</li>
-          ))}
-        </ul>
-      </div>
-  )
+    <div>
+      <h1>Todo List</h1>
+      <AddTodoForm/>{/* Add the form component */}
+      <TodoList/>{/* Add the TodoList component */}
+    </div>
+  );
 }
-
-export default App
+export default App;
