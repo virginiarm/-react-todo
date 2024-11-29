@@ -1,24 +1,16 @@
 import React from "react";
+import TodoListItem from './TodoListItem';
 
-//declaring a function of named todolist
-const todoList = [
-    { id: 1, title:"Complete assigment"},
-    { id: 2, title: "Buy coffee supplies"},
-    { id: 3, title: "Water plants"},
-  ]
-const TodoList= ()=> {
-    return (
-        //adding the multi-line return statement to the todolist 
-        <div>
-            <h1>Todo List</h1>
-            <ul>
+
+function TodoList({todoList=[] }){
+   
+    return(
+        <ul>
             {todoList.map((todo)=>(
-            <li key={todo.id}>{todo.title}</li>
-          ))}
+                <TodoListItem key={todo.id} todo={todo}/>
+            ))}
         </ul>
-
-        </div>
-    );
+    )
 };
 
 export default TodoList;
